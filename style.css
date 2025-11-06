@@ -1,0 +1,154 @@
+/* 基本設定 */
+body {
+    font-family: 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+    background-color: #f0f7ff;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    color: #007bff;
+    border-bottom: 2px dashed #bde0ff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.app-area {
+    display: flex;
+    gap: 20px;
+}
+
+.todo-container, .done-container {
+    flex: 1; /* 横幅を均等に分ける */
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+}
+
+h2 {
+    font-size: 1.2em;
+    color: #555;
+    margin-top: 0;
+}
+
+/* タスクカードのデザイン */
+.task-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 1.5em; /* 文字を大きく */
+    font-weight: bold;
+}
+
+/* 現在のタスクは特に目立たせる */
+#current-task-area .task-card {
+    background-color: #fffbe6;
+    border: 2px solid #ffc107;
+}
+
+.task-card i {
+    font-size: 1.5em; /* アイコンを大きく */
+    margin-right: 15px;
+    color: #007bff;
+    width: 40px; /* アイコンの幅を固定 */
+    text-align: center;
+}
+
+/* 終わったタスクのデザイン */
+.done-card {
+    background-color: #e9ecef;
+    font-size: 1em; /* 少し小さく */
+    color: #6c757d;
+    text-decoration: line-through; /* 取り消し線 */
+    opacity: 0.8;
+}
+
+.done-card i {
+    color: #6c757d;
+}
+
+/* 「できた！」ボタン */
+.complete-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+    background-color: #28a745;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.2s;
+}
+
+.complete-btn:hover {
+    background-color: #218838;
+}
+
+/* 全タスク完了時のメッセージ */
+.all-done-message {
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #e83e8c;
+    padding: 30px;
+}
+
+/* スマホ用の設定 */
+@media (max-width: 600px) {
+    .app-area {
+        flex-direction: column; /* 縦並びにする */
+    }
+}
+
+/* ルーティン切り替えボタンのエリア */
+.routine-switcher {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* ルーティン切り替えボタン */
+.routine-btn {
+    padding: 8px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    border: 2px solid #007bff;
+    border-radius: 20px;
+    background-color: #fff;
+    color: #007bff;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+/* 選択されていないボタンにマウスが乗った時 */
+.routine-btn:not(.active):hover {
+    background-color: #e7f5ff;
+}
+
+/* 選択されているボタンのデザイン */
+.routine-btn.active {
+    background-color: #007bff;
+    color: white;
+}

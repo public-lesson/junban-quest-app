@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>わたしのやることリスト</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome (アイコン表示のため) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1 id="routine-title">あさのじゅんび</h1>
+            <div class="routine-switcher">
+                <button id="btn-morning" class="routine-btn active">あさ</button>
+                <button id="btn-evening" class="routine-btn">かえり</button>
+            </div>
+        </header>
+
+        <main class="app-area">
+            <div class="todo-container">
+                <h2><i class="fa-solid fa-star"></i> いまやること</h2>
+                <div id="current-task-area">
+                    <!-- JavaScriptによってここに現在のタスクが表示されます -->
+                </div>
+            </div>
+
+            <div class="done-container">
+                <h2><i class="fa-solid fa-check-double"></i> おわったこと</h2>
+                <div id="done-list-area">
+                    <!-- JavaScriptによってここに完了したタスクが表示されます -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
