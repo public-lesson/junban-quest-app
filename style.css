@@ -33,7 +33,7 @@ header {
 }
 
 .todo-container, .done-container {
-    flex: 1; /* 横幅を均等に分ける */
+    flex: 1;
     padding: 15px;
     background-color: #f8f9fa;
     border-radius: 10px;
@@ -54,30 +54,29 @@ h2 {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
-    font-size: 1.5em; /* 文字を大きく */
+    font-size: 1.5em;
     font-weight: bold;
 }
 
-/* 現在のタスクは特に目立たせる */
 #current-task-area .task-card {
     background-color: #fffbe6;
     border: 2px solid #ffc107;
 }
 
 .task-card i {
-    font-size: 1.5em; /* アイコンを大きく */
+    font-size: 1.5em;
     margin-right: 15px;
     color: #007bff;
-    width: 40px; /* アイコンの幅を固定 */
+    width: 40px;
     text-align: center;
 }
 
 /* 終わったタスクのデザイン */
 .done-card {
     background-color: #e9ecef;
-    font-size: 1em; /* 少し小さく */
+    font-size: 1em;
     color: #6c757d;
-    text-decoration: line-through; /* 取り消し線 */
+    text-decoration: line-through;
     opacity: 0.8;
 }
 
@@ -85,7 +84,6 @@ h2 {
     color: #6c757d;
 }
 
-/* 「できた！」ボタン */
 .complete-btn {
     display: block;
     width: 100%;
@@ -97,7 +95,7 @@ h2 {
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 10px;
     transition: background-color 0.2s;
 }
 
@@ -105,7 +103,6 @@ h2 {
     background-color: #218838;
 }
 
-/* 全タスク完了時のメッセージ */
 .all-done-message {
     text-align: center;
     font-size: 1.8em;
@@ -114,14 +111,12 @@ h2 {
     padding: 30px;
 }
 
-/* スマホ用の設定 */
 @media (max-width: 600px) {
     .app-area {
-        flex-direction: column; /* 縦並びにする */
+        flex-direction: column;
     }
 }
 
-/* ルーティン切り替えボタンのエリア */
 .routine-switcher {
     display: flex;
     justify-content: center;
@@ -129,7 +124,6 @@ h2 {
     margin-top: 15px;
 }
 
-/* ルーティン切り替えボタン */
 .routine-btn {
     padding: 8px 20px;
     font-size: 1em;
@@ -142,13 +136,67 @@ h2 {
     transition: all 0.2s;
 }
 
-/* 選択されていないボタンにマウスが乗った時 */
 .routine-btn:not(.active):hover {
     background-color: #e7f5ff;
 }
 
-/* 選択されているボタンのデザイン */
 .routine-btn.active {
     background-color: #007bff;
     color: white;
+}
+
+/* タイマー用のCSS */
+.timer-container {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.timer-presets {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.preset-btn {
+    flex: 1;
+    padding: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.svg-timer-container {
+    position: relative;
+    width: 250px; /* タイマーを大きく */
+    height: 250px; /* タイマーを大きく */
+    margin: 15px auto;
+}
+
+.svg-timer {
+    /* ここは空でOK */
+}
+
+.timer-display {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em; /* 文字を大きく */
+    font-weight: bold;
+    color: #333;
+    line-height: 1.2;
+}
+
+/* SVG内の数値目盛りのスタイル */
+.timer-number-label {
+    font-size: 16px; /* 18pxから少し小さくしてバランスを取る */
+    fill: #6c757d;
+    font-weight: bold;
 }
